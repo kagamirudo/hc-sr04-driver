@@ -10,6 +10,10 @@ This module demonstrates various ways to use the sensor driver:
 5. Advanced configuration
 """
 
+# Global GPIO pin configuration
+TRIG_PIN = 23
+ECHO_PIN = 24
+
 # Handle both package and standalone execution
 try:
     from .sensor import HCSR04Sensor
@@ -52,8 +56,8 @@ def custom_configuration():
     try:
         # Create custom configuration
         config = HCSR04Config(
-            trig_pin=17,           # Different GPIO pin
-            echo_pin=27,           # Different GPIO pin
+            trig_pin=TRIG_PIN,           # Different GPIO pin
+            echo_pin=ECHO_PIN,           # Different GPIO pin
             update_interval=0.5,   # Faster updates
             min_distance=1.0,      # Custom minimum distance
             max_distance=300.0,    # Custom maximum distance
@@ -142,8 +146,8 @@ def advanced_configuration():
     try:
         # Create advanced configuration
         config = HCSR04Config(
-            trig_pin=23,
-            echo_pin=24,
+            trig_pin=TRIG_PIN,
+            echo_pin=ECHO_PIN,
             settle_time=0.05,      # Faster settling
             pulse_duration=0.00001,  # 10 microseconds
             echo_timeout=0.05,     # Faster timeout
