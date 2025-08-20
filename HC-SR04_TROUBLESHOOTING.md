@@ -52,27 +52,38 @@ sudo python sensor_hcsr04_lgpio.py
 - Use multiple readings and average them
 - Check for electromagnetic interference
 
-## Hardware Setup
+## 🔌 **Wiring Verification**
 
-### Required Components
-- HC-SR04 ultrasonic sensor
-- Raspberry Pi (or compatible board)
-- Jumper wires
-- 5V power supply
+### **Correct Wiring (Based on Official Pi Hut Tutorial):**
 
-### Wiring Diagram
-```
-HC-SR04    Raspberry Pi
-VCC    ->  5V (Pin 2)
-GND    ->  Ground (Pin 6)
-TRIG   ->  GPIO 23 (Pin 16)
-ECHO   ->  GPIO 24 (Pin 18)
-```
+1. **Sensor Connections:**
+   - **Vcc** → 5V power rail (Red wire)
+   - **GND** → Ground rail (Black wire)
+   - **TRIG** → GPIO 23 [Pin 16] (Blue wire)
+   - **ECHO** → GPIO 24 [Pin 18] via voltage divider (Yellow wire)
 
-### Power Requirements
-- **VCC**: 5V (important: don't use 3.3V)
-- **Current**: ~15mA typical
-- **GND**: Common ground with Raspberry Pi
+2. **Voltage Divider (Required for ECHO pin):**
+   - **ECHO** → 1kΩ resistor → GPIO 24
+   - **1kΩ rail** → 2kΩ resistor → GND
+   - This protects the Pi from 5V ECHO signal
+
+3. **Power Connections:**
+   - **GPIO 5V [Pin 2]** → Power rail
+   - **GPIO GND [Pin 6]** → Ground rail
+
+### **Common Wiring Mistakes:**
+- ❌ **Missing voltage divider** - ECHO pin outputs 5V, Pi expects 3.3V
+- ❌ **Wrong GPIO pins** - Must use BCM numbering (23, 24)
+- ❌ **Reversed TRIG/ECHO** - Check wire colors carefully
+- ❌ **Loose connections** - Ensure all wires are firmly seated
+
+### **Pin Reference:**
+- **BCM 23** = Physical Pin 16 (TRIG)
+- **BCM 24** = Physical Pin 18 (ECHO)
+- **5V** = Physical Pin 2
+- **GND** = Physical Pin 6
+
+*Reference: [The Pi Hut HC-SR04 Tutorial](https://thepihut.com/blogs/raspberry-pi-tutorials/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)*
 
 ## Software Configuration
 

@@ -140,6 +140,43 @@ python test_hcsr04.py
 # - Configuration verification
 ```
 
+## 🔌 **Wiring Instructions**
+
+### **Hardware Requirements:**
+- HC-SR04 Ultrasonic Sensor
+- Raspberry Pi (any model)
+- Breadboard
+- 4x Male-to-Female jumper wires (Red, Blue, Yellow, Black)
+- 1x 1kΩ resistor (R1)
+- 1x 2kΩ resistor (R2)
+
+### **Connection Steps:**
+
+1. **Connect sensor to jumper wires:**
+   - **Red** → Vcc (Power)
+   - **Blue** → TRIG (Trigger)
+   - **Yellow** → ECHO (Echo)
+   - **Black** → GND (Ground)
+
+2. **Power connections:**
+   - **Vcc (Red)** → Breadboard positive rail
+   - **GND (Black)** → Breadboard negative rail
+   - **GPIO 5V [Pin 2]** → Breadboard positive rail
+   - **GPIO GND [Pin 6]** → Breadboard negative rail
+
+3. **Signal connections:**
+   - **TRIG (Blue)** → Breadboard rail → **GPIO 23 [Pin 16]**
+   - **ECHO (Yellow)** → Breadboard rail → **1kΩ resistor (R1)** → **GPIO 24 [Pin 18]**
+   - **R1 rail** → **2kΩ resistor (R2)** → **GND rail**
+
+### **Important Notes:**
+- The voltage divider (R1 + R2) protects the Pi from the 5V ECHO signal
+- GPIO 23 = Pin 16 (BCM numbering)
+- GPIO 24 = Pin 18 (BCM numbering)
+- Use BCM pin numbering in your code
+
+*Wiring instructions based on [The Pi Hut's official HC-SR04 tutorial](https://thepihut.com/blogs/raspberry-pi-tutorials/hc-sr04-ultrasonic-range-sensor-on-the-raspberry-pi)*
+
 ## Hardware Requirements
 
 - Raspberry Pi (or compatible board)
