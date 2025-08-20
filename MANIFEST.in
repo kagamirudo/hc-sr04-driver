@@ -1,0 +1,18 @@
+# Include README and LICENSE
+include README.md
+include LICENSE
+include requirements.txt
+
+# Include package documentation
+recursive-include hcsr04_driver *.md
+
+# Include examples
+recursive-include hcsr04_driver *.py
+
+# Exclude development files
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+global-exclude .git*
+global-exclude .DS_Store
+global-exclude *.log

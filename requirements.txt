@@ -1,0 +1,14 @@
+# HC-SR04 Ultrasonic Sensor Driver Requirements
+# Core dependencies for the sensor driver
+
+# GPIO libraries (at least one required)
+lgpio>=0.2.0; sys_platform == "linux"  # Recommended for Raspberry Pi 5
+RPi.GPIO>=0.7.0; sys_platform == "linux"  # Fallback option
+
+# Development dependencies (optional)
+# Install with: pip install -e .[dev]
+# pytest>=6.0
+# pytest-cov>=2.0
+# black>=21.0
+# flake8>=3.8
+# mypy>=0.800
