@@ -86,13 +86,20 @@ The project now supports continuous real-time distance monitoring with the follo
 ============================================================
            REAL-TIME DISTANCE SENSOR
 ============================================================
-Mode: MOCK GPIO
+Mode: HC-SR04 with lgpio
 Update Interval: 1.0 seconds
 Press Ctrl+C to stop
 ============================================================
-[20:52:22] Distance:  96.61 cm 🟡 Medium
-[20:52:23] Distance:  20.45 cm 🟢 Very Close
-[20:52:24] Distance: 145.32 cm 🟠 Far
+[14:23:15] Distance:  45.67 cm 🟢 Close
+[14:23:16] Distance:  43.21 cm 🟢 Close
+[14:23:17] Distance:  47.89 cm 🟢 Close
+[14:23:18] Distance:  52.34 cm 🟡 Medium
+[14:23:19] Distance:  48.76 cm 🟢 Close
+[14:23:20] Distance:  51.23 cm 🟡 Medium
+[14:23:21] Distance:  49.87 cm 🟢 Close
+[14:23:22] Distance:  46.54 cm 🟢 Close
+[14:23:23] Distance:  44.32 cm 🟢 Close
+[14:23:24] Distance:  42.18 cm 🟢 Close
 ```
 
 ## HC-SR04 Sensor Support
